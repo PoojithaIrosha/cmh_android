@@ -1,0 +1,19 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.CeylonMarketHub" parent="Theme.Material3.Light.NoActionBar">
+<!--         Customize your light theme here. -->
+        <item name="colorSecondaryContainer">@color/primary_container_color</item>
+        <item name="colorSurfaceContainer">@color/primary_container_color</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor">@color/white</item>
+    </style>
+
+    <style name="Theme.CeylonMarketHub" parent="Base.Theme.CeylonMarketHub" />
+
+    <style name="Theme.CeylonMarketHub.Fullscreen" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/white</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/launch_screen</item>
+        <item name="postSplashScreenTheme">@style/Theme.CeylonMarketHub</item>
+    </style>
+
+</resources>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp">
+
+    <ImageView
+        android:id="@+id/ivProductImage"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvProductTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Iphone 15 pro max 128GB 8GB" />
+
+        <TextView
+            android:id="@+id/tvPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LKR 400.00"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/primary_color"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tvQty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textSize="12sp"
+            android:textColor="@android:color/darker_gray"
+            android:text="x 1" />
+
+        <TextView
+            android:id="@+id/tvOrderStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_order_status"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="3dp"
+            android:layout_marginStart="10dp"
+            android:layout_gravity="right"
+            android:text="PENDING"
+            android:textColor="#F3D605"
+            android:textStyle="bold"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

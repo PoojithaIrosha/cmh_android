@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "637982995781",
+    "project_id": "ceylonmarkethub",
+    "storage_bucket": "ceylonmarkethub.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:637982995781:android:52c42f1ccdb4da2e2e3a2c",
+        "android_client_info": {
+          "package_name": "lk.cmh.app.ceylonmarkethub"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "637982995781-miuvnj48ugjrebq4b4r043o71247nrt0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "lk.cmh.app.ceylonmarkethub",
+            "certificate_hash": "2735bf62c7672847c6d30bb2636e069d755829e8"
+          }
+        },
+        {
+          "client_id": "637982995781-hrnnvkkiesatjhggaa0nd0nk7u3q4jii.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgoR2UdgugBk881V2GVyIsL3RBjt6Qj9Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "637982995781-hrnnvkkiesatjhggaa0nd0nk7u3q4jii.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

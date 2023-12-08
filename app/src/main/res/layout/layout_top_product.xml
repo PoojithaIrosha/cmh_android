@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="?android:attr/selectableItemBackground"
+    >
+
+    <ImageView
+        android:id="@+id/productImage"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="16dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="16dp"
+        >
+        <TextView
+            android:id="@+id/currency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LKR"
+            android:textStyle="bold"
+            android:padding="2dp"
+            android:textColor="@color/primary_color"
+            />
+        <TextView
+            android:id="@+id/priceMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="216"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:padding="2dp"
+            android:textColor="@color/primary_color"
+            />
+        <TextView
+            android:id="@+id/priceCents"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=".00"
+            android:textStyle="bold"
+            android:padding="2dp"
+            android:textColor="@color/primary_color"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/oldPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LKR 4639.00"
+        android:textSize="12sp"
+        android:padding="2dp"
+        android:layout_marginHorizontal="16dp"
+        android:textColor="@color/gray_dark"
+        android:background="@drawable/strike_through"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp"
+        >
+        <TextView
+            android:id="@+id/orderCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="700+ Orders"
+            android:textSize="12sp"
+            android:padding="2dp"
+            android:textColor="@color/gray_dark"
+            />
+
+        <ImageView
+            android:layout_width="19dp"
+            android:layout_height="19dp"
+            android:layout_marginStart="5dp"
+            android:src="@drawable/ic_star"
+            app:tint="@color/gray_dark"
+            />
+
+        <TextView
+            android:id="@+id/rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4.7"
+            android:textSize="12sp"
+            android:padding="2dp"
+            android:textColor="@color/gray_dark"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

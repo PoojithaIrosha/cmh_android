@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Ceylon Market Hub</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="server_client_id">637982995781-hrnnvkkiesatjhggaa0nd0nk7u3q4jii.apps.googleusercontent.com</string>
+
+    <string name="shipping">350.00</string>
+    <string name="merchantId">1223041</string>
+    <string name="currency">LKR</string>
+    <!--    <string name="googleMapsApi">AIzaSyDCNEZdP0JRFUHLDL0CDhpPayIqIoKZ2d4</string>-->
+    <string name="googleMapsApi">AIzaSyDI8s33S6b1vrEe7KnvzbnHnk4_zNOSQkM</string>
+    <string name="project_price">500</string>
+
+    <string-array name="order_status_array">
+        <item>PENDING</item>
+        <item>CONFIRMED</item>
+        <item>CANCELLED</item>
+        <item>DELIVERED</item>
+    </string-array>
+
+    <string-array name="reviews_spinner_array">
+        <item>Select</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+</resources>
