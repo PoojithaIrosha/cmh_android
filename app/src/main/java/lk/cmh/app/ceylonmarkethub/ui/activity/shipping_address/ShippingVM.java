@@ -62,6 +62,9 @@ public class ShippingVM extends ViewModel {
         if (mobileNumber.isEmpty()) {
             shippingFS.setMobileNumberError("Mobile number cannot be empty");
             shippingFormState.setValue(shippingFS);
+        }else if (mobileNumber.length() < 10) {
+            shippingFS.setMobileNumberError("Mobile number should be 10 digits");
+            shippingFormState.setValue(shippingFS);
         }else{
             shippingFS.setMobileNumberError(null);
         }

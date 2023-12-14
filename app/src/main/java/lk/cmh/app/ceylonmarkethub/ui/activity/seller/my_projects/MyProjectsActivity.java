@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import lk.cmh.app.ceylonmarkethub.R;
+import lk.cmh.app.ceylonmarkethub.data.util.FragmentUtil;
 import lk.cmh.app.ceylonmarkethub.databinding.ActivityMyProjectsBinding;
 import lk.cmh.app.ceylonmarkethub.ui.fragment.seller.products.add_product.AddProductFragment;
 import lk.cmh.app.ceylonmarkethub.ui.fragment.seller.products.product_list.ProductListFragment;
@@ -30,23 +31,16 @@ public class MyProjectsActivity extends AppCompatActivity {
             finish();
         });
 
-        loadFragment(new ProjectListFragment());
+        FragmentUtil.loadFragment(new ProjectListFragment(), R.id.fragmentContainerView, this);
 
         binding.mainTopAppBar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 if(item.getItemId() == R.id.smpAddProduct) {
-                    loadFragment(new AddProjectFragment());
+                    FragmentUtil.loadFragment(new AddProjectFragment(), R.id.fragmentContainerView, MyProjectsActivity.this);
                 }
                 return false;
             }
         });
-    }
-
-    private void loadFragment(Fragment fragment) {
-        FragmentManager supportFragmentManager = getSupportFragmentManager();
-        FragmentTransaction transaction = supportFragmentManager.beginTransaction();
-        transaction.replace(R.id.fragmentContainerView, fragment);
-        transaction.commit();
     }
 }

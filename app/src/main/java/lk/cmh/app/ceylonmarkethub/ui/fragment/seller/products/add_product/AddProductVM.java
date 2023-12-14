@@ -97,12 +97,18 @@ public class AddProductVM extends ViewModel {
         if (price.isEmpty()) {
             formState.setPriceError("Price cannot be empty");
             addProductFormState.setValue(formState);
+        }else if(!price.matches("^[0-9]+(\\.[0-9]{1,2})?$")) {
+            formState.setPriceError("Invalid price");
+            addProductFormState.setValue(formState);
         }else {
             formState.setPriceError(null);
         }
 
         if (quantity.isEmpty()) {
             formState.setQuantityError("Quantity cannot be empty");
+            addProductFormState.setValue(formState);
+        }else if(!quantity.matches("^[0-9]+$")) {
+            formState.setQuantityError("Invalid quantity");
             addProductFormState.setValue(formState);
         }else {
             formState.setQuantityError(null);

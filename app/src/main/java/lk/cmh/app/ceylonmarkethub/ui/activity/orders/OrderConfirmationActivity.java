@@ -164,13 +164,22 @@ public class OrderConfirmationActivity extends AppCompatActivity {
         req.setOrderId(String.valueOf(System.currentTimeMillis()));
         req.setItemsDescription(description);
         req.getCustomer().setFirstName(user.getFirstName());
-        req.getCustomer().setLastName(user.getLastName());
+        if(user.getLastName() == null || user.getLastName().isEmpty()) {
+            req.getCustomer().setLastName("");
+        }else {
+            req.getCustomer().setLastName(user.getLastName());
+        }
         req.getCustomer().setEmail(user.getEmail());
 
         if (user.getAddress() != null) {
             req.getCustomer().setPhone(user.getAddress().getMobileNumber());
             req.getCustomer().getAddress().setAddress(user.getAddress().getAddressLine1() + ", " + user.getAddress().getAddressLine2() != null ? user.getAddress().getAddressLine2() : "");
             req.getCustomer().getAddress().setCity(user.getAddress().getCity());
+            req.getCustomer().getAddress().setCountry("Sri Lanka");
+        }else {
+            req.getCustomer().setPhone("");
+            req.getCustomer().getAddress().setAddress("");
+            req.getCustomer().getAddress().setCity("");
             req.getCustomer().getAddress().setCountry("Sri Lanka");
         }
 

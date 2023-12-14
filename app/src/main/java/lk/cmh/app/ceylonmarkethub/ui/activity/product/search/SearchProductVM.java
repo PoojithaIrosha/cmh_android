@@ -80,6 +80,37 @@ public class SearchProductVM extends ViewModel {
         });
     }
 
+    public void searchProducts(long category) {
+        isLoading.setValue(true);
+
+        productRepository.getProductsByCategory(category, currentPage, SIZE).enqueue(new Callback<PageableDto>() {
+            @Override
+            public void onResponse(Call<PageableDto> call, Response<PageableDto> response) {
+                if (response.isSuccessful()) {
+                    PageableDto dto = response.body();
+                    totalPages = dto.getTotalPages();
+                    isLast = dto.isLast();
+
+                    if (totalPages >= currentPage) {
+                        List<Product> currentProducts = searchLiveData.getValue();
+                        List<Product> newProducts = dto.getContent();
+                        currentProducts = newProducts;
+                        searchLiveData.setValue(currentProducts);
+                        currentPage++;
+                    }
+                }
+
+                isLoading.setValue(false);
+            }
+
+            @Override
+            public void onFailure(Call<PageableDto> call, Throwable t) {
+                Log.i(TAG, t.toString());
+                isLoading.setValue(false);
+            }
+        });
+    }
+
     public void searchProducts(String text, String priceMin, String priceMax) {
         isLoading.setValue(true);
 

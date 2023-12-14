@@ -28,6 +28,7 @@ public class ProductSearchViewActivity extends AppCompatActivity {
     private ActivityProductSearchViewBinding binding;
     private SearchProductVM productVM;
     private String search;
+    private long category;
     private BottomSheetBehavior<View> bottomSheetBehavior;
 
     @Override
@@ -41,9 +42,14 @@ public class ProductSearchViewActivity extends AppCompatActivity {
 
         productVM = new ViewModelProvider(this).get(SearchProductVM.class);
 
-        search = getIntent().getExtras().getString("search");
-        productVM.searchProducts(search);
-        binding.searchBox.setText(search);
+        category = getIntent().getExtras().getLong("category", 0);
+        if (category != 0) {
+            productVM.searchProducts(category);
+        }else {
+            search = getIntent().getExtras().getString("search");
+            productVM.searchProducts(search);
+            binding.searchBox.setText(search);
+        }
 
         binding.searchBox.setOnClickListener(new View.OnClickListener() {
             @Override

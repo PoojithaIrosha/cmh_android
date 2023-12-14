@@ -112,6 +112,9 @@ public class UpdateProjectVM extends ViewModel {
         if (budget.isEmpty()) {
             formState.setBudgetError("Budget cannot be empty");
             updateProjectFS.setValue(formState);
+        } else if (!budget.matches("^[0-9]+(\\.[0-9]{1,2})?$")) {
+            formState.setBudgetError("Invalid budget");
+            updateProjectFS.setValue(formState);
         } else {
             formState.setBudgetError(null);
         }

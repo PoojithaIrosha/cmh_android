@@ -41,7 +41,7 @@ public class UserProfileActivity extends AppCompatActivity {
                 binding.etEmail.setText(user.getEmail());
                 binding.etRole.setText(user.getRole().split("_")[1]);
 
-                if (user.getPicture().isEmpty()) {
+                if (user.getPicture() == null) {
                     binding.userProfileImage.setImageDrawable(getDrawable(R.drawable.shop_img));
                 } else {
                     Picasso.get().load(user.getPicture()).placeholder(R.drawable.shop_img).into(binding.userProfileImage);

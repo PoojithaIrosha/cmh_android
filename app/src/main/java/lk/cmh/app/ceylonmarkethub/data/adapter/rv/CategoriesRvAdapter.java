@@ -1,5 +1,6 @@
 package lk.cmh.app.ceylonmarkethub.data.adapter.rv;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -21,6 +22,8 @@ import java.util.List;
 import lk.cmh.app.ceylonmarkethub.R;
 import lk.cmh.app.ceylonmarkethub.data.model.category.Category;
 import lk.cmh.app.ceylonmarkethub.databinding.LayoutCategoryItemBinding;
+import lk.cmh.app.ceylonmarkethub.ui.activity.product.search.ProductSearchViewActivity;
+import lk.cmh.app.ceylonmarkethub.ui.activity.product.search.SearchProductsActivity;
 
 public class CategoriesRvAdapter extends RecyclerView.Adapter<CategoriesRvAdapter.ViewHolder> {
 
@@ -64,13 +67,15 @@ public class CategoriesRvAdapter extends RecyclerView.Adapter<CategoriesRvAdapte
         });
 
         holder.item.setOnClickListener((v) -> {
-
+            Intent intent = new Intent(v.getContext(), ProductSearchViewActivity.class);
+            intent.putExtra("category", category.getId());
+            v.getContext().startActivity(intent);
         });
     }
 
     @Override
     public int getItemCount() {
-        return  categoryList != null ? categoryList.size() : 0;
+        return categoryList != null ? categoryList.size() : 0;
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

@@ -25,6 +25,8 @@ public class OrderHistoryActivity extends AppCompatActivity {
 
         orderHistoryVM = new ViewModelProvider(this, ViewModelProvider.Factory.from(OrderHistoryVM.initializer)).get(OrderHistoryVM.class);
 
+        binding.mainTopAppBar.setNavigationOnClickListener(v -> finish());
+
         orderHistoryVM.getOrderHistory().observe(this, new Observer<List<OrderHistory>>() {
             @Override
             public void onChanged(List<OrderHistory> orderHistories) {

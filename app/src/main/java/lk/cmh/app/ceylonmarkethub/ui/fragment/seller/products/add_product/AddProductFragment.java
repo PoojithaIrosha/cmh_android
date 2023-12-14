@@ -25,6 +25,7 @@ import lk.cmh.app.ceylonmarkethub.R;
 import lk.cmh.app.ceylonmarkethub.data.adapter.rv.AddProductRvImagesAdapter;
 import lk.cmh.app.ceylonmarkethub.data.model.category.Category;
 import lk.cmh.app.ceylonmarkethub.data.model.product.ProductDto;
+import lk.cmh.app.ceylonmarkethub.data.util.FragmentUtil;
 import lk.cmh.app.ceylonmarkethub.databinding.FragmentAddProductBinding;
 import lk.cmh.app.ceylonmarkethub.ui.activity.main.MainActivity;
 import lk.cmh.app.ceylonmarkethub.ui.fragment.seller.products.product_list.ProductListFragment;
@@ -45,7 +46,7 @@ public class AddProductFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         binding.btnClose.setOnClickListener(v -> {
-            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView, new ProductListFragment()).commit();
+            FragmentUtil.loadFragment(new ProductListFragment(), R.id.fragmentContainerView, getActivity());
         });
 
         binding.btnChooseImages.setOnClickListener(v -> {

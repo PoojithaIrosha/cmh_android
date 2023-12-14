@@ -29,10 +29,8 @@ public class RetrofitUtil {
     private static final String TAG = RetrofitUtil.class.getSimpleName();
     private static Retrofit retrofit;
     private static RetrofitUtil instance;
-    //    private static final String baseUrl = "http://10.0.2.2:8080/api/v1/";
-    private static String baseUrl = "http://192.168.1.3:8080/api/v1/";
-//    private static final String baseUrl = "http://192.168.43.144:8080/api/v1/";
-//    private static final String baseUrl = "https://fec5-112-134-190-182.ngrok-free.app/api/v1/";
+//        private static final String baseUrl = "http://10.0.2.2:8080/api/v1/";
+    private static String baseUrl = "http://192.168.1.36:8080/api/v1/";
 
     private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
 
@@ -40,14 +38,6 @@ public class RetrofitUtil {
     }
 
     public static RetrofitUtil getInstance() {
-        if (instance == null) {
-            instance = new RetrofitUtil();
-        }
-        return instance;
-    }
-
-    public static RetrofitUtil getInstance(String baseUrl) {
-        RetrofitUtil.baseUrl = baseUrl;
         if (instance == null) {
             instance = new RetrofitUtil();
         }

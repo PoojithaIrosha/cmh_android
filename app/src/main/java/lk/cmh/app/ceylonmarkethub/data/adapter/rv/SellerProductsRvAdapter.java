@@ -28,6 +28,7 @@ import java.util.List;
 import lk.cmh.app.ceylonmarkethub.R;
 import lk.cmh.app.ceylonmarkethub.data.model.product.Product;
 import lk.cmh.app.ceylonmarkethub.data.repository.ProductRepository;
+import lk.cmh.app.ceylonmarkethub.data.util.FragmentUtil;
 import lk.cmh.app.ceylonmarkethub.databinding.LayoutSellerMyProductItemBinding;
 import lk.cmh.app.ceylonmarkethub.ui.activity.product.product_view.ProductViewActivity;
 import lk.cmh.app.ceylonmarkethub.ui.fragment.seller.products.update_product.UpdateProductFragment;
@@ -97,7 +98,7 @@ public class SellerProductsRvAdapter extends RecyclerView.Adapter<SellerProducts
             Bundle bundle = new Bundle();
             bundle.putLong("pid", product.getId());
             updateProductFragment.setArguments(bundle);
-            ((FragmentActivity) v.getContext()).getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView, updateProductFragment).commit();
+            FragmentUtil.loadFragment(updateProductFragment, R.id.fragmentContainerView, (FragmentActivity) v.getContext());
         });
 
         holder.checkBox.setOnClickListener(v -> {

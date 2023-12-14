@@ -38,6 +38,7 @@ import lk.cmh.app.ceylonmarkethub.data.model.product.ProductSize;
 import lk.cmh.app.ceylonmarkethub.data.model.projects.Project;
 import lk.cmh.app.ceylonmarkethub.data.model.projects.ProjectDto;
 import lk.cmh.app.ceylonmarkethub.data.model.projects.ProjectImage;
+import lk.cmh.app.ceylonmarkethub.data.util.FragmentUtil;
 import lk.cmh.app.ceylonmarkethub.databinding.FragmentUpdateProjectBinding;
 import lk.cmh.app.ceylonmarkethub.ui.fragment.seller.products.product_list.ProductListFragment;
 import lk.cmh.app.ceylonmarkethub.ui.fragment.seller.products.update_product.UpdateProductVM;
@@ -111,7 +112,7 @@ public class UpdateProjectFragment extends Fragment {
         });
 
         binding.btnClose.setOnClickListener(v -> {
-            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView, new ProductListFragment()).commit();
+            FragmentUtil.loadFragment(new ProductListFragment(), R.id.fragmentContainerView, getActivity());
         });
 
         binding.btnChooseImages.setOnClickListener(v -> {

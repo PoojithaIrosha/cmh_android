@@ -116,7 +116,10 @@ public class AddProjectVM extends ViewModel {
         if (budget.isEmpty()) {
             formState.setBudgetError("Budget cannot be empty");
             addProjectFS.setValue(formState);
-        } else {
+        } else if(!budget.matches("^[0-9]+(\\.[0-9]{1,2})?$")) {
+            formState.setBudgetError("Invalid budget");
+            addProjectFS.setValue(formState);
+        }else {
             formState.setBudgetError(null);
         }
 

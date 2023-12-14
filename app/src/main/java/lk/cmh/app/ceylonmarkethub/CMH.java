@@ -87,17 +87,16 @@ public class CMH extends Application {
             }
 
             // Notification Broadcasts
+            NotificationChannel channel = new NotificationChannel(NEW_ORDERS_CHANNEL_ID, "New Orders", NotificationManager.IMPORTANCE_DEFAULT);
+            channel.setShowBadge(true);
+            channel.enableLights(true);
+            channel.setDescription("New order received notification channel");
+            channel.setLightColor(R.color.white);
+            channel.enableVibration(true);
+            notificationManager.createNotificationChannel(channel);
+
             String role = auth.getString("role", "ROLE_CUSTOMER");
             if (role.equals("ROLE_SELLER")) {
-
-                NotificationChannel channel = new NotificationChannel(NEW_ORDERS_CHANNEL_ID, "New Orders", NotificationManager.IMPORTANCE_DEFAULT);
-                channel.setShowBadge(true);
-                channel.enableLights(true);
-                channel.setDescription("New order received notification channel");
-                channel.setLightColor(R.color.white);
-                channel.enableVibration(true);
-                notificationManager.createNotificationChannel(channel);
-
                 addNotificationListener(auth);
             }
 

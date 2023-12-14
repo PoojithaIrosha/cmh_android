@@ -36,6 +36,7 @@ import lk.cmh.app.ceylonmarkethub.data.model.product.ProductColors;
 import lk.cmh.app.ceylonmarkethub.data.model.product.ProductDto;
 import lk.cmh.app.ceylonmarkethub.data.model.product.ProductImage;
 import lk.cmh.app.ceylonmarkethub.data.model.product.ProductSize;
+import lk.cmh.app.ceylonmarkethub.data.util.FragmentUtil;
 import lk.cmh.app.ceylonmarkethub.databinding.FragmentUpdateProductBinding;
 import lk.cmh.app.ceylonmarkethub.ui.fragment.seller.products.product_list.ProductListFragment;
 
@@ -112,7 +113,7 @@ public class UpdateProductFragment extends Fragment {
         });
 
         binding.btnClose.setOnClickListener(v -> {
-            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView, new ProductListFragment()).commit();
+            FragmentUtil.loadFragment(new ProductListFragment(), R.id.fragmentContainerView, getActivity());
         });
 
         binding.btnChooseImages.setOnClickListener(v -> {

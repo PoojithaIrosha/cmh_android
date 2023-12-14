@@ -28,6 +28,7 @@ import lk.cmh.app.ceylonmarkethub.data.adapter.rv.AddProductRvImagesAdapter;
 import lk.cmh.app.ceylonmarkethub.data.model.product.ProductDto;
 import lk.cmh.app.ceylonmarkethub.data.model.projects.ProjectDto;
 import lk.cmh.app.ceylonmarkethub.data.model.user.User;
+import lk.cmh.app.ceylonmarkethub.data.util.FragmentUtil;
 import lk.cmh.app.ceylonmarkethub.databinding.FragmentAddProjectBinding;
 import lk.cmh.app.ceylonmarkethub.ui.activity.main.MainActivity;
 import lk.cmh.app.ceylonmarkethub.ui.activity.orders.OrderConfirmationActivity;
@@ -60,7 +61,7 @@ public class AddProjectFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         binding.btnClose.setOnClickListener(v -> {
-            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView, new ProjectListFragment()).commit();
+            FragmentUtil.loadFragment(new ProjectListFragment(), R.id.fragmentContainerView, getActivity());
         });
 
         binding.btnChooseImages.setOnClickListener(v -> {
